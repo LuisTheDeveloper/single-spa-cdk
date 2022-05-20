@@ -7,7 +7,7 @@ const app = new cdk.App();
 new CdkStack(app, "reactS3Stack", {
   env: {
     region: "us-east-1",
-    account: "298955741025",
+    account: "",
   },
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,
