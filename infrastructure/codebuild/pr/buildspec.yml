@@ -1,0 +1,14 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: "16"
+    commands:
+      - npm install -g npm@7
+      - npm install
+  build:
+    commands:
+      # install root-config
+      - cd ${CODEBUILD_SRC_DIR}/root-config
+      - npm run lint
+      - npm run build:webpack
