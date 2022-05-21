@@ -7,8 +7,13 @@ phases:
       - npm install -g npm@7
   build:
     commands:
-      # install root-config
-      - cd ${CODEBUILD_SRC_DIR}/root-config
+      # install & build root-config
+      - cd ${CODEBUILD_SRC_DIR}/frontend/root-config
+      - npm install 
+      - npm run lint
+      - npm run build:webpack
+      # install & build root-config
+      - cd ${CODEBUILD_SRC_DIR}/frontend/main-app
       - npm install 
       - npm run lint
       - npm run build:webpack
