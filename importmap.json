@@ -1,0 +1,9 @@
+{
+    "imports": {
+      "@single-spa/welcome": "https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js",
+      "@Luis/root-config": "https://cdk-single-spa.s3.us-east-2.amazonaws.com/root-config/Luis-root-config.js",
+      "react": "https://cdn.jsdelivr.net/npm/react@16.13.1/umd/react.production.min.js",
+      "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@16.13.1/umd/react-dom.production.min.js",        
+      "@Luis/test-app": "https://cdk-single-spa.s3.us-east-2.amazonaws.com/main-app/Luis-test-app.js"
+    }
+  }

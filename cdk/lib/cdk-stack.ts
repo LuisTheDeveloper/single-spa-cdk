@@ -20,7 +20,7 @@ export class CdkStack extends Stack {
     // });
 
     // S3:
-    const bucket = new s3.Bucket(this, "CdkTestBucket", {
+    const bucket = new s3.Bucket(this, "cdk-test-single-spa", {
       publicReadAccess: true,
       websiteIndexDocument: "index.html",
     });
@@ -32,19 +32,19 @@ export class CdkStack extends Stack {
     });
 
     // Cloudfront
-    const distribution = new cloudfront.CloudFrontWebDistribution(
-      this,
-      "CfDistribution",
-      {
-        originConfigs: [
-          {
-            s3OriginSource: {
-              s3BucketSource: bucket,
-            },
-            behaviors: [{ isDefaultBehavior: true }],
-          },
-        ],
-      }
-    );
+    // const distribution = new cloudfront.CloudFrontWebDistribution(
+    //   this,
+    //   "CfDistribution",
+    //   {
+    //     originConfigs: [
+    //       {
+    //         s3OriginSource: {
+    //           s3BucketSource: bucket,
+    //         },
+    //         behaviors: [{ isDefaultBehavior: true }],
+    //       },
+    //     ],
+    //   }
+    // );
   }
 }

@@ -73,3 +73,6 @@ dist
 *.sln
 *.sw?
 .DS_Store
+
+#ignore files
+*.ignore
