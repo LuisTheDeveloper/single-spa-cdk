@@ -2,7 +2,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: "$NODE_VERSION"
+      nodejs: "16"
     commands:
       - npm install -g npm@7
       - npm run preinstall
@@ -40,30 +40,30 @@ phases:
       # deploy PR stack
       # - cd ${CODEBUILD_SRC_DIR}/infrastructure/apps/test
       # - npx cdk deploy FrontEndSPA --require-approval=never
-reports:
-  # Backend
-  UnitTest:
-    files:
-      - junit.xml
-    file-format: JUNITXML
-  Coverage:
-    files:
-      - clover.xml
-    file-format: CLOVERXML
-    base-directory: coverage
-  # Frontend
-  FrontendUnitTest:
-    files:
-      - junit.xml
-    file-format: JUNITXML
-    base-directory: frontend/main-app
-  FrontendCoverage:
-    files:
-      - clover.xml
-    file-format: CLOVERXML
-    base-directory: frontend/main-app/coverage
-  # Functional
-  FunctionalTest:
-    files:
-      - cucumber_report.json
-    file-format: CUCUMBERJSON
+# reports:
+#   # Backend
+#   UnitTest:
+#     files:
+#       - junit.xml
+#     file-format: JUNITXML
+#   Coverage:
+#     files:
+#       - clover.xml
+#     file-format: CLOVERXML
+#     base-directory: coverage
+#   # Frontend
+#   FrontendUnitTest:
+#     files:
+#       - junit.xml
+#     file-format: JUNITXML
+#     base-directory: frontend/main-app
+#   FrontendCoverage:
+#     files:
+#       - clover.xml
+#     file-format: CLOVERXML
+#     base-directory: frontend/main-app/coverage
+#   # Functional
+#   FunctionalTest:
+#     files:
+#       - cucumber_report.json
+#     file-format: CUCUMBERJSON
