@@ -40,5 +40,6 @@ phases:
       # deploy s3 cdk for single-spa website host
       - cd ${CODEBUILD_SRC_DIR}/infrastructure/apps/test
       - cp -R *.* ${CODEBUILD_SRC_DIR}/dev/apps
-      - cd ${CODEBUILD_SRC_DIR}/dev
+      - cd ${CODEBUILD_SRC_DIR}/dev/apps
+      - cdk list
       - npx cdk deploy FrontEndSPA --require-approval=never
