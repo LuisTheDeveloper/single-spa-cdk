@@ -31,15 +31,15 @@ phases:
       - mkdir dev
       # install aws-cdk globally
       - cd ${CODEBUILD_SRC_DIR}
-      - npm install aws-cdk -g
+      # - npm install aws-cdk -g
       # get cdk version & initialize cdk
       - cdk --version       
-      - cd ${CODEBUILD_SRC_DIR}/dev
-      - cdk init app --language typescript
-      - mkdir apps
-      # deploy s3 cdk for single-spa website host
-      - cd ${CODEBUILD_SRC_DIR}/infrastructure/apps/test
-      - cp -R *.* ${CODEBUILD_SRC_DIR}/dev/apps
-      - cd ${CODEBUILD_SRC_DIR}/dev/apps
-      - cdk list
-      - npx cdk deploy FrontEndSPA --require-approval=never
+      # - cd ${CODEBUILD_SRC_DIR}/dev
+      # - cdk init app --language typescript
+      # - mkdir apps
+      # # deploy s3 cdk for single-spa website host
+      # - cd ${CODEBUILD_SRC_DIR}/infrastructure/apps/test
+      # - cp -R *.* ${CODEBUILD_SRC_DIR}/dev/apps
+      # - cd ${CODEBUILD_SRC_DIR}/dev/apps
+      # - cdk list
+      # - npx cdk deploy FrontEndSPA --require-approval=never
