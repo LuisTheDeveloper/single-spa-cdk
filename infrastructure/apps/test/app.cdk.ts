@@ -16,7 +16,7 @@ new StaticSiteStack(app, "FrontEndSPA", {
     websiteSource: "../../../frontend/dist",
     websiteRedirect: "/root-config/dist/index.html",
     allowedIPs: [
-      "84.65.31.248"
+      "your IP"
     ],
   });
 

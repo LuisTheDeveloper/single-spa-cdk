@@ -11,38 +11,38 @@ phases:
   build:
     commands:
       # install & build root-config
-      # - cd ${CODEBUILD_SRC_DIR}/frontend/root-config
-      # - npm install 
-      # - npm run lint
-      # - npm run build:webpack
-      # # install & build root-config
-      # - cd ${CODEBUILD_SRC_DIR}/frontend/main-app
-      # - npm install 
-      # - npm run build:webpack
-      # # create a dist single-spa folder structure to serve static website in s3
-      # - cd ${CODEBUILD_SRC_DIR}/frontend
-      # - mkdir dist
-      # - mkdir dist/root-config
-      # - mkdir dist/main-app
-      # # copy required files for single-spa static website
-      # - cd ${CODEBUILD_SRC_DIR}/frontend
-      # - cp importmap.json dist
-      # - cp -R root-config/dist/. dist/root-config
-      # - cp -R main-app/dist/. dist/main-app
+      - cd ${CODEBUILD_SRC_DIR}/frontend/root-config
+      - npm install 
+      - npm run lint
+      - npm run build:webpack
+      # install & build root-config
+      - cd ${CODEBUILD_SRC_DIR}/frontend/main-app
+      - npm install 
+      - npm run build:webpack
+      # create a dist single-spa folder structure to serve static website in s3
+      - cd ${CODEBUILD_SRC_DIR}/frontend
+      - mkdir dist
+      - mkdir dist/root-config
+      - mkdir dist/main-app
+      # copy required files for single-spa static website
+      - cd ${CODEBUILD_SRC_DIR}/frontend
+      - cp importmap.json dist
+      - cp -R root-config/dist/. dist/root-config
+      - cp -R main-app/dist/. dist/main-app
       # create dev folder for cdk
       - cd ${CODEBUILD_SRC_DIR}      
       - mkdir dev
       # install aws-cdk globally
       - cd ${CODEBUILD_SRC_DIR}
-      # - npm install aws-cdk -g
+      - npm install aws-cdk -g
       # get cdk version & initialize cdk
       - cdk --version       
-      # - cd ${CODEBUILD_SRC_DIR}/dev
-      # - cdk init app --language typescript
-      # - mkdir apps
-      # # deploy s3 cdk for single-spa website host
-      # - cd ${CODEBUILD_SRC_DIR}/infrastructure/apps/test
-      # - cp -R *.* ${CODEBUILD_SRC_DIR}/dev/apps
-      # - cd ${CODEBUILD_SRC_DIR}/dev/apps
-      # - cdk list
-      # - npx cdk deploy FrontEndSPA --require-approval=never
+      - cd ${CODEBUILD_SRC_DIR}/dev
+      - cdk init app --language typescript
+      - mkdir apps
+      # deploy s3 cdk for single-spa website host
+      - cd ${CODEBUILD_SRC_DIR}/infrastructure/apps/test
+      - cp -R *.* ${CODEBUILD_SRC_DIR}/dev/apps
+      - cd ${CODEBUILD_SRC_DIR}/dev/apps
+      - cdk list
+      - npx cdk deploy FrontEndSPA --require-approval=never

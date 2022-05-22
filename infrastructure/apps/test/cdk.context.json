@@ -1,5 +1,5 @@
 {
-    "account": "298955741025",
+    "account": "your account number",
     "region": "us-east-2",
     "bitbucketRepo": "cdk-single-spa-auto",
     "buildTimeout": 30,
