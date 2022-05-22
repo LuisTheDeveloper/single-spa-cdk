@@ -1,0 +1,11 @@
+{
+    "account": "298955741025",
+    "region": "us-east-2",
+    "bitbucketRepo": "cdk-single-spa-auto",
+    "buildTimeout": 30,
+    "buildEnvironment": {
+      "NODE_VERSION": "14"
+    },
+    "@aws-cdk/core:newStyleStackSynthesis": true
+  }
+  
