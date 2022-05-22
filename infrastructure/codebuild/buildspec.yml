@@ -8,32 +8,33 @@ phases:
   build:
     commands:
       # install & build root-config
-      - cd ${CODEBUILD_SRC_DIR}/frontend/root-config
-      - npm install 
-      - npm run lint
-      - npm run build:webpack
-      # install & build root-config
-      - cd ${CODEBUILD_SRC_DIR}/frontend/main-app
-      - npm install 
-      - npm run build:webpack
-      # create a dist single-spa folder structure to serve static website in s3
-      - cd ${CODEBUILD_SRC_DIR}/frontend
-      - mkdir dist
-      - mkdir dist/root-config
-      - mkdir dist/main-app
-      # copy required files for single-spa static website
-      - cd ${CODEBUILD_SRC_DIR}/frontend
-      - cp importmap.json dist
-      - cp -R root-config/dist/. dist/root-config
-      - cp -R main-app/dist/. dist/main-app
+      # - cd ${CODEBUILD_SRC_DIR}/frontend/root-config
+      # - npm install 
+      # - npm run lint
+      # - npm run build:webpack
+      # # install & build root-config
+      # - cd ${CODEBUILD_SRC_DIR}/frontend/main-app
+      # - npm install 
+      # - npm run build:webpack
+      # # create a dist single-spa folder structure to serve static website in s3
+      # - cd ${CODEBUILD_SRC_DIR}/frontend
+      # - mkdir dist
+      # - mkdir dist/root-config
+      # - mkdir dist/main-app
+      # # copy required files for single-spa static website
+      # - cd ${CODEBUILD_SRC_DIR}/frontend
+      # - cp importmap.json dist
+      # - cp -R root-config/dist/. dist/root-config
+      # - cp -R main-app/dist/. dist/main-app
       # initialize cdk
       - cd ${CODEBUILD_SRC_DIR}
+      - echo ${CODEBUILD_SRC_DIR}
       - mkdir dev
       - cd ${CODEBUILD_SRC_DIR}/dev
-      - cdk init --language=typescript
-      - mkdir apps
-      # deploy s3 cdk for single-spa website host
-      - cd ${CODEBUILD_SRC_DIR}/infrastructure/apps/test
-      - cp -R *.* ${CODEBUILD_SRC_DIR}/dev/apps
-      - cd ${CODEBUILD_SRC_DIR}/dev
-      - npx cdk deploy FrontEndSPA --require-approval=never
+      - cdk #init app --language typescript
+      # - mkdir apps
+      # # deploy s3 cdk for single-spa website host
+      # - cd ${CODEBUILD_SRC_DIR}/infrastructure/apps/test
+      # - cp -R *.* ${CODEBUILD_SRC_DIR}/dev/apps
+      # - cd ${CODEBUILD_SRC_DIR}/dev
+      # - npx cdk deploy FrontEndSPA --require-approval=never
