@@ -29,9 +29,10 @@ phases:
       # initialize cdk
       - cd ${CODEBUILD_SRC_DIR}
       - echo ${CODEBUILD_SRC_DIR}
+      - npm install aws-cdk -g
       - mkdir dev
       - cd ${CODEBUILD_SRC_DIR}/dev
-      - cdk #init app --language typescript
+      - cdk --version #init app --language typescript
       # - mkdir apps
       # # deploy s3 cdk for single-spa website host
       # - cd ${CODEBUILD_SRC_DIR}/infrastructure/apps/test
