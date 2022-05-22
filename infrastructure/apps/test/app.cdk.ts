@@ -1,6 +1,6 @@
 import "source-map-support/register";
 import { App } from "aws-cdk-lib";
-import { StaticSiteStack } from "../../lib/staticsite.cdk"
+import { StaticSiteStack } from "./staticsite.cdk"
 
 const app = new App();
 const env = {
