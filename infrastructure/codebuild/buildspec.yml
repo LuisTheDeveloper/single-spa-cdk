@@ -5,6 +5,9 @@ phases:
       nodejs: "16"
     commands:
       - npm install -g npm@7
+      - npm run preinstall
+      - npm install
+      - npm run postinstall      
   build:
     commands:
       # install & build root-config
